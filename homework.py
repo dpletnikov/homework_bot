@@ -47,6 +47,7 @@ def send_message(bot, message):
 
 
 def get_api_answer(current_timestamp):
+    """Отправляет запрос к API домашки на  ENDPOINT."""
     timestamp = current_timestamp or int(time.time())
     params = {'from_date': timestamp}
     try:
@@ -92,6 +93,7 @@ def parse_status(homework):
 
 
 def check_tokens():
+    """Проверяет переменные окружения."""
     is_exists = (PRACTICUM_TOKEN and TELEGRAM_TOKEN and TELEGRAM_CHAT_ID)
     return is_exists
 
